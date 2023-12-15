@@ -12,3 +12,13 @@ epoll имеет три режима работы: уровень приорит
 Вместо использования набора файловых дескрипторов epoll_wait заполняет буфер событиями, которые в данный момент готовы к обработке.
 
 Особенность epoll заключается в том, что в буфер добавляются только готовые события, поэтому нет необходимости перебирать все просматриваемые в данный момент файловые дескрипторы в клиенте. Этот механизм позволяет оптимизировать проверку готовности клиентов с O(N) в случае использования select до O(1).
+
+# Список литературы
+
+- https://man7.org/linux/man-pages/man7/epoll.7.html
+- https://habr.com/ru/articles/416669/
+- https://idea.popcount.org/2017-01-06-select-is-fundamentally-broken/
+- https://idea.popcount.org/2017-02-20-epoll-is-fundamentally-broken-12/
+- https://idea.popcount.org/2017-03-20-epoll-is-fundamentally-broken-22/
+- https://github.com/libevent/libevent/blob/master/epoll.c
+- https://github.com/torvalds/linux/blob/master/fs/eventpoll.c

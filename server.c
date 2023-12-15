@@ -192,6 +192,8 @@ int main(int argc, const char **argv)
         kill_peer("");
     }
 
+    printf("Сервер запущен\n");
+
     while (true)
     {
         int ready = epoll_wait(epoll_create_FD, events, 16 * 1024, -1);
